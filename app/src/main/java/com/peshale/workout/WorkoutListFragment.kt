@@ -58,7 +58,6 @@ class WorkoutListFragment: ListFragment() {
             names
         )
         listAdapter = adapter
-        //return inflater.inflate(R.layout.fragment_workout_list, container, false)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 

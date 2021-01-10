@@ -26,6 +26,9 @@ class WorkoutDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (savedInstanceState != null) {
+            workoutId = savedInstanceState.getLong("workoutId");
+        }
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -47,6 +50,10 @@ class WorkoutDetailFragment : Fragment() {
             val description = view.findViewById<TextView>(R.id.textDescription) as TextView
             description.text = workout.description
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putLong("workoutId", workoutId)
     }
 
     companion object {
